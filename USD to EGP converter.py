@@ -23,7 +23,7 @@ if "." in value_USD:
 else:
      value_USD = int(value_USD)
 
-while 1==1:
+while 1:
    value_EGP = value_USD * rate
    print (value_EGP, " pounds")
    value_USD = input("Enter another value to convert or type 0 to exit: ")
