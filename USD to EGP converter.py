@@ -5,14 +5,14 @@ url = "https://markets.businessinsider.com/currencies/usd-egp"
 r = urllib.request.urlopen(url)
 text = r.read()
 text = str(text)
+
 pos = text.index("CurrentPrice")
-#edit pos+19 according to how may decimal places there si on the webpage
 pos2 = text[pos+14:].index(",")
 pos3 = text[pos+14:].index(".")
 dp = (pos2-pos3)
+
 rate = text[pos+14:pos+14+pos2]
 rate = Decimal(rate.replace('.',''))
-#edit /100 according to the same thing
 rate = rate/(10**(dp-1))
 value_USD = input("Please enter the value in USD that you want to convert to EGP: ")
 
